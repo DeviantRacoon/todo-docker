@@ -1,0 +1,22 @@
+# Create MySQL service
+
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev123
+    ports:
+      - "3306:3306"
+
+  # app:
+  #   build: .
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     DB_HOST: db
+  #     DB_USER: my_user
+  #     DB_PASSWORD: password
+  #     DB_NAME: my_db

@@ -7,7 +7,7 @@ export default function responseMiddleware(req: express.Request, res: express.Re
     if (res.statusCode === 500) {
       body = {
         ok: false,
-        message: "Lo sentimos, ha ocurrido un error, nuestro equipo lo esta trabajando. Por favor, intente mas tarde.",
+        message: body.message || "Lo sentimos, ha ocurrido un error, nuestro equipo lo esta trabajando. Por favor, intente mas tarde.",
       };
     } else if (body && body.message) {
       body = {

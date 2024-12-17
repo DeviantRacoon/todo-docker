@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import { getUser, userRegister } from '@modules/user/services/user.service';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.status(200).json({ message: 'Ruta de usuario' });
-});
+router.get('/', getUser);
+router.post('/', userRegister);
 
 export default router;
